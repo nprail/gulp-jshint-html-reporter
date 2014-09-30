@@ -35,7 +35,7 @@ The filename to write output from jshint. When linting is successfull, the file 
 
 ## License
 
-[MIT](http://opensource.org/licenses/MIT) © [Ivan Vesely](ivan.jan.vesely@gmail.com)
+[MIT](http://opensource.org/licenses/MIT) © [Ivan Vesely](https://github.com/ivan-vesely)
 
 ## Release History
 
