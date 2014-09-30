@@ -1,4 +1,4 @@
-jshint-html-reporter
+gulp-jshint-html-reporter
 ====================
 
 A simple reporter for gulp-jshint that writes it's output to a file.
@@ -6,44 +6,36 @@ A simple reporter for gulp-jshint that writes it's output to a file.
 ## Installation
 
 ```bash
-$: npm install jshint-html-reporter --save
+$: npm install gulp-jshint-html-reporter --save
 ```
 
 ## Usage
 
-Use it with:
+```javascript
+var gulp = require('gulp');
+var jshint = require('gulp-jshint');
 
-#### JSHint CLI
-
-```
-jshint --reporter node_modules/jshint-html-reporter/reporter.js file.js
-```
-
-#### [grunt-contrib-jshint](https://github.com/gruntjs/grunt-contrib-jshint)
-
-```js
-grunt.initConfig({
-	jshint: {
-		options: {
-			reporter: require('jshint-html-reporter'),
-			reporterOutput: 'jshint-report.html'
-		},
-		target: ['file.js']
-	}
+gulp.task('lint', function() {
+  return gulp.src('./lib/*.js')
+    .pipe(jshint())
+    .pipe(jshint.reporter('gulp-jshint-html-reporter', {
+      filename: __dirname + '/jshint-output.log'
+    }));
 });
 
-grunt.loadNpmTasks('grunt-contrib-jshint');
-grunt.registerTask('default', ['jshint']);
-```
+## Options
+
+Plugin options:
+
+Type: `filename`
+Default: `"jshint-output.html"`
+
+The filename to write output from jshint. When linting is successfull, the file is not created.
 
 ## License
 
-[MIT](http://opensource.org/licenses/MIT) © [Adrian Pietka](http://adrian.pietka.info)
+[MIT](http://opensource.org/licenses/MIT) © [Ivan Vesely](ivan.jan.vesely@gmail.com)
 
 ## Release History
 
-* 0.2.0 Summary of results and code refactor
-* 0.1.3 Improvements in package.json
-* 0.1.2 Improvements in package.json and template
-* 0.1.1 Fixes for path of template files
 * 0.1.0 Initial release

@@ -10,6 +10,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ivan-vesely/gulp-jshint-html-reporter.git"
+  },
   "keywords": [
     "gulp",
     "jshint",
@@ -17,9 +21,10 @@
     "html-reporter"
   ],
   "author": "Ivan Vesely <ivan.jan.vesely@gmail.com>",
+  "homepage": "https://github.com/ivan-vesely/gulp-jshint-html-reporter",
   "license": "MIT",
   "maintainers": [
-    "adrian.pietka <adrian@pietka.info>"
+    "ivan-vesely <ivan.jan.vesely@hotmail.com>"
   ],
   "main": "index.js"
 }
