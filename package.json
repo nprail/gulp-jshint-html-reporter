@@ -1,0 +1,25 @@
+{
+  "name": "gulp-jshint-html-reporter",
+  "version": "0.1.0",
+  "description": "Simple generator of HTML report for gulp-jshint that writes its output to a file",
+  "files": [
+    "index.js",
+    "reporter.js",
+    "templates/"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gulp",
+    "jshint",
+    "reporter",
+    "html-reporter"
+  ],
+  "author": "Ivan Vesely <ivan.jan.vesely@gmail.com>",
+  "license": "MIT",
+  "maintainers": [
+    "adrian.pietka <adrian@pietka.info>"
+  ],
+  "main": "index.js"
+}
