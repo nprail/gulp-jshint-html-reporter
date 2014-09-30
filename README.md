@@ -22,6 +22,7 @@ gulp.task('lint', function() {
       filename: __dirname + '/jshint-output.log'
     }));
 });
+```
 
 ## Options
 
