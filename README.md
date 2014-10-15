@@ -1,7 +1,7 @@
 gulp-jshint-html-reporter
 ====================
 
-A simple reporter for gulp-jshint that writes it's output to a file.
+A simple reporter for gulp-jshint that writes it's output to a html file which looks pretty.
 
 ## Installation
 
@@ -40,3 +40,5 @@ The filename to write output from jshint. When linting is successfull, the file 
 ## Release History
 
 * 0.1.0 Initial release
+* 0.1.1 Minor fix with configuration
+* 0.1.2 Minor bug fix on jshint output file
