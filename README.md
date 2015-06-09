@@ -19,7 +19,8 @@ gulp.task('lint', function() {
   return gulp.src('./lib/*.js')
     .pipe(jshint())
     .pipe(jshint.reporter('gulp-jshint-html-reporter', {
-      filename: __dirname + '/jshint-output.html'
+      filename: __dirname + '/jshint-output.html',
+      createMissingFolders : false  
     }));
 });
 ```
@@ -32,6 +33,12 @@ Type: `filename`
 Default: `"jshint-output.html"`
 
 The filename to write output from jshint. When linting is successfull, the file is not created.
+
+Type: `createMissingFolders`
+Default: `false`
+
+Enables or disables creation of any folders given in the filename that do not exist. 
+If disabled and the given path contains folders which do not exist, an ENOENT error is thrown. 
 
 ## License
 
