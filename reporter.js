@@ -108,6 +108,16 @@ module.exports = {
                 .replace('{summary}', prepareSummary());
         }
 
+        fs.mkdirTree = function (dir){
+            var parent = path.dirname(dir);
+            if(!fs.existsSync(parent)){
+                fs.mkdirTree(parent);
+            }
+            if (!fs.existsSync(dir)) {
+                fs.mkdir(dir);
+            }
+        }              
+
         function writeToFile(content, opts) {
             opts = opts || {};
             opts.filename = opts.filename || defaultFilename;
@@ -116,12 +126,14 @@ module.exports = {
                 wrStream.end();
                 wrStream = null;
             }
-
             if (!wrStream) {
+                var dir = path.dirname(opts.filename);
+                if (opts.createMissingFolders && !fs.existsSync(dir)) {
+                    fs.mkdirTree(dir);
+                }
                 wrStream = fs.createWriteStream(opts.filename);
                 filename = opts.filename;
             }
-
             wrStream.write(content);
         }
 
