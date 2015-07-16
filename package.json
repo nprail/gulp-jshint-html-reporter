@@ -1,6 +1,6 @@
 {
   "name": "gulp-jshint-html-reporter",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Simple generator of HTML report for gulp-jshint that writes its output to a html file which looks pretty",
   "files": [
     "index.js",
