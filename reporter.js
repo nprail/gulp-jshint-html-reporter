@@ -116,7 +116,7 @@ module.exports = {
             if (!fs.existsSync(dir)) {
                 fs.mkdir(dir);
             }
-        }              
+        }
 
         function writeToFile(content, opts) {
             opts = opts || {};
