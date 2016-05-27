@@ -104,6 +104,7 @@ module.exports = {
 
         function getRenderedHTML() {
             return templates.body
+                .replace('{charset}', opts.htmlcharset || 'utf-8')
                 .replace('{content}', prepareContent())
                 .replace('{summary}', prepareSummary());
         }
