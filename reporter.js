@@ -2,9 +2,6 @@
 
 var defaultFilename = 'jshint-output.html';
 
-var wrStream;
-var filename;
-
 module.exports = {
     reporter: function (result, data, opts) {
 
@@ -117,25 +114,22 @@ module.exports = {
             if (!fs.existsSync(dir)) {
                 fs.mkdir(dir);
             }
-        }              
+        }
 
         function writeToFile(content, opts) {
             opts = opts || {};
             opts.filename = opts.filename || defaultFilename;
 
-            if (wrStream && filename !== opts.filename) {
-                wrStream.end();
-                wrStream = null;
+            var dir = path.dirname(opts.filename);
+
+            if (opts.createMissingFolders && !fs.existsSync(dir)) {
+                fs.mkdirTree(dir);
             }
-            if (!wrStream) {
-                var dir = path.dirname(opts.filename);
-                if (opts.createMissingFolders && !fs.existsSync(dir)) {
-                    fs.mkdirTree(dir);
-                }
-                wrStream = fs.createWriteStream(opts.filename);
-                filename = opts.filename;
-            }
+
+            var wrStream = fs.createWriteStream(opts.filename);
+
             wrStream.write(content);
+            wrStream.end();
         }
 
         init();
